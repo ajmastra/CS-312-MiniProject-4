@@ -1,0 +1,300 @@
+:root {
+    --bg: #0d1117;          /* deeper dark background */
+    --surface: #161b22;     /* cards/panels */
+    --surface-2: #21262d;   /* contrast surface */
+    --text: #c9d1d9;        /* primary text */
+    --muted: #8b949e;       /* secondary text */
+    --accent: #58a6ff;      /* blue accent */
+    --accent-hover: #79c0ff; /* hover state */
+    --danger: #f85149;      /* red for delete */
+    --border: #30363d;      /* borders */
+    --input-bg: #0d1117;    /* input backgrounds */
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+/* Global styles */
+.app {
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+/* Header and Footer */
+.app-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+}
+
+.app-footer {
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+.brand {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.25rem;
+    transition: color 0.2s ease;
+}
+
+.brand:hover {
+    color: var(--accent);
+}
+
+.nav-link {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    transition: color 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+}
+
+/* Card styles */
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px var(--shadow);
+}
+
+.panel-head {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.panel-head h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Posts */
+.post {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+    margin-bottom: 1rem;
+}
+
+.post:hover {
+    border-left-color: var(--accent-hover);
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.post h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+    color: var(--text);
+}
+
+.post .meta {
+    color: var(--muted);
+    font-size: 0.875rem;
+    margin-bottom: 0.75rem;
+}
+
+.post .content {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+/* Empty state */
+.empty {
+    background: var(--surface-2);
+    border: 1px dashed var(--border);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    color: var(--muted);
+}
+
+.empty p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+/* Input styles */
+.input-dark,
+.input-dark:focus,
+.form-select.input-dark {
+    background: var(--input-bg) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 6px;
+    padding: 0.625rem 0.875rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-dark:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1) !important;
+    outline: none;
+}
+
+.input-dark::placeholder {
+    color: #6e7681;
+}
+
+/* Button styles */
+.btn {
+    border-radius: 6px;
+    padding: 0.625rem 1.25rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.875rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.813rem;
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-accent:hover {
+    background: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.3);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+.btn-ghost:hover {
+    color: var(--text);
+    border-color: var(--accent);
+    background: rgba(88, 166, 255, 0.1);
+}
+
+.btn-outline-accent {
+    background: transparent;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+}
+
+.btn-outline-accent:hover {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-danger-ghost {
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid var(--border);
+}
+
+.btn-danger-ghost:hover {
+    border-color: var(--danger);
+    background: rgba(248, 81, 73, 0.1);
+    color: #ff6a6a;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Badge styles */
+.badge-accent {
+    background: rgba(88, 166, 255, 0.1);
+    color: var(--accent);
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    padding: 0.25rem 0.625rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    white-space: nowrap;
+}
+
+/* Select styles */
+.select-accent {
+    border-color: var(--border);
+    background: var(--input-bg);
+    color: var(--text);
+    border-radius: 6px;
+}
+
+.select-accent:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+    outline: none;
+}
+
+/* Form styles */
+.form-label {
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+/* Utility classes */
+.text-center {
+    text-align: center;
+}
+
+.small {
+    font-size: 0.875rem;
+}
+
+.text-muted {
+    color: var(--muted);
+}
+
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+    .panel {
+        padding: 1rem;
+    }
+    
+    .post {
+        padding: 1rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+    }
+    
+    .actions .btn {
+        width: 100%;
+    }
+}
